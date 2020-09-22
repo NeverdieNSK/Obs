@@ -18,7 +18,9 @@ SOURCES += \
         main.cpp \
     observer.cpp \
     displayelement.cpp \
-    subject.cpp
+    subject.cpp \
+    currentconditionsdisplay.cpp \
+    weatherdata.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,4 +30,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     observer.h \
     displayelement.h \
-    subject.h
+    subject.h \
+    currentconditionsdisplay.h \
+    weatherdata.h
