@@ -4,3 +4,8 @@ DisplayElement::DisplayElement()
 {
 
 }
+
+DisplayElement::~DisplayElement()
+{
+
+}
