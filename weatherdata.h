@@ -4,8 +4,7 @@
 #include "subject.h"
 #include <QList>
 
-class WeatherData : public Subject
-{
+class WeatherData : public Subject {
 private:
     QList<Observer*> *observers;
     float temperature;
@@ -13,13 +12,12 @@ private:
     float pressure;
 public:
     WeatherData();
-    void registerObserver(Observer *o);
-    void removeObserver(Observer *o);
-    void notifyObservers();
-    void measurementChanged();
-    void setMeasurements(float temp, float humidity, float pressure);
+    virtual void registerObserver(Observer *o);
+    virtual void removeObserver(Observer *o);
+    virtual void notifyObserver();
+    void setMeasurementsChanged(float t, float p, float h);
+    void measurementsChanged();
 };
-
 
 #endif // WEATHERDATA_H
 

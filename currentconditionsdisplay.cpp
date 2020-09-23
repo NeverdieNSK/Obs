@@ -1,9 +1,10 @@
 #include "currentconditionsdisplay.h"
 
 
-CurrentConditionsDisplay::CurrentConditionsDisplay()
+CurrentConditionsDisplay::CurrentConditionsDisplay(Subject *weatherData)
 {
-
+    this->weatherData = weatherData;
+    weatherData->registerObserver(this);
 }
 
 void CurrentConditionsDisplay::update(float t, float h, float p){
@@ -17,3 +18,4 @@ void CurrentConditionsDisplay::display() {
         << "%" << humidity << endl
         << pressure << "mm Hg" << endl;
 }
+

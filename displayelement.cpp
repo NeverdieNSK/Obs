@@ -5,7 +5,3 @@ DisplayElement::DisplayElement()
 
 }
 
-DisplayElement::~DisplayElement()
-{
-
-}

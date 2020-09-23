@@ -7,10 +7,9 @@ class Subject
 {
 public:
     Subject();
-    virtual void registerObserver(Observer *o) =0;
-    virtual void removeObserver(Observer *o) =0;
-    virtual void notifyObserver() =0;
-
+    virtual void registerObserver(Observer *o) = 0;
+    virtual void removeObserver(Observer *o) = 0;
+    virtual void notifyObserver() = 0;
 };
 
 #endif // SUBJECT_H

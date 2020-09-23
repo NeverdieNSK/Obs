@@ -10,28 +10,25 @@ void WeatherData::registerObserver(Observer *o) {
 }
 
 void WeatherData::removeObserver(Observer *o) {
-
     int i = observers->indexOf(o);
-
-    if (i >= 0) {
+        if (i>0) {
         observers->removeAt(i);
     }
 }
-
-void WeatherData::notifyObservers() {
-    for (int i = 0; i < observers->size(); i++) {
+void WeatherData::notifyObserver(){
+    for (int i=0; i<observers->size(); i++) {
         Observer *observer = observers->at(i);
-        observer->update(temperature,humidity,pressure);
+        observer->update(temperature, humidity, pressure);
     }
 }
 
-void WeatherData::measurementChanged() {
-    notifyObservers();
+void WeatherData::setMeasurementsChanged(float t, float p, float h) {
+    this->temperature = t;
+    this->humidity = h;
+    this->pressure = p;
+    this->notifyObserver();
 }
 
-void WeatherData::setMeasurements(float temp, float humidity, float pressure) {
-    this->temperature = temp;
-    this->humidity = humidity;
-    this->pressure;
-    measurementChanged();
+void WeatherData::measurementsChanged() {
+    notifyObserver();
 }
